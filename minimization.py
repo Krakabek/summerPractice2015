@@ -1,8 +1,5 @@
 __author__ = 'Danil Radkovsky, Stas Chmilenko'
 
-def f(x):
-    return (x - 2) ** 2
-
 def min(f, a, b, eps):
     delta = (b - a) / 1000.0
     x1 = (a + b) / 2 - delta
@@ -29,6 +26,3 @@ def min(f, a, b, eps):
 
         else:
             return min(f, x1, b, eps)
-
-if __name__ == '__main__':
-    print("%.2f %.2f " % min(f, -5, 5, 0.01))
