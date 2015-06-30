@@ -1,4 +1,5 @@
 __author__ = 'Danil Radkovsky, Stas Chmilenko'
+import pylab as p
 
 def f(x):
     return (x - 2) ** 2
@@ -32,3 +33,13 @@ def min(f, a, b, eps):
 
 if __name__ == '__main__':
     print("%.2f %.2f " % min(f, -5, 5, 0.01))
+    x = p.arange(-5, 5, 0.01)
+    p.figure()
+    p.plot(x, f(x))
+    p.ylim([-1, 30])
+    p.xlim([-5, 5])
+    p.xlabel('X')
+    p.ylabel('Y')
+    p.legend(('X', 'F(X)'))
+    # p.savefig('XY(t).png', dpi=96)  #  uncomment to save plots
+    p.show()
