@@ -1,16 +1,16 @@
 __author__ = 'Danil Radkovsky, Stas Chmilenko'
 
 def f(x):
-    return (x - 3) ^ 2
+    return (x - 2) ** 2
 
 def min(f, a, b, eps):
-    delta = (b - a) / 1000
+    delta = (b - a) / 1000.0
     x1 = (a + b) / 2 - delta
     x2 = (a + b) / 2 + delta
 
     if f(x1) < f(x2):
 
-        if (x2 - (a + b) / 2) < eps:
+        if (x2 - a) < eps:
 
             x_min = (x2 + a) / 2
 
@@ -21,7 +21,7 @@ def min(f, a, b, eps):
 
     else:
 
-        if ((a + b) / 2 - x1) < eps:
+        if (b - x1) < eps:
 
             x_min = (b + x1) / 2
 
@@ -31,4 +31,4 @@ def min(f, a, b, eps):
             return min(f, x1, b, eps)
 
 if __name__ == '__main__':
-    print(min(f, -5, 5, 0.1))
+    print("%.2f %.2f " % min(f, -5, 5, 0.01))
