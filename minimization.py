@@ -14,7 +14,9 @@ def min(f, a, b, eps, points=[]):
 
             x_min = (x2 + a) / 2
 
-            return [f(x_min), x_min, points]
+            return {"f": f(x_min),
+                    "x": x_min,
+                    "points": points}
 
         else:
             return min(f, a, x2, eps, points)
@@ -25,7 +27,9 @@ def min(f, a, b, eps, points=[]):
 
             x_min = (b + x1) / 2
 
-            return [f(x_min), x_min, points]
+            return {"f": f(x_min),
+                    "x": x_min,
+                    "points": points}
 
         else:
 
